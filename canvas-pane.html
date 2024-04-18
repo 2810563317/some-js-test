@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .option{
+
+  }
+  #canvas{
+    background-color: pink;
+  }
+</style>
+<body>
+  <div class="option">
+    <button id="clear">重置</button>
+    <button id="save">保存</button>
+  </div>
+  <canvas id="canvas" width="500" height="500"></canvas>
+</body>
+<script>
+  let painting = false
+  let startPonit = {x: undefined, y: undefined}
+  const canvas = document.getElementById("canvas")
+  const clear = document.getElementById("clear")
+  const save = document.getElementById("save")
+  const ctx = canvas.getContext("2d")
+
+  canvas.onmousedown = (e) =>{
+    const x = e.offsetX;
+    const y = e.offsetY;
+    startPonit = {x, y}
+    painting = true
+  }
+  canvas.onmousemove= (e) =>{
+    const x = e.offsetX;
+    const y = e.offsetY;
+    const newPoint = {x, y}
+    if(painting){
+      drawLine(startPonit.x, startPonit.y, newPoint.x,newPoint.y)
+      startPonit = newPoint
+    }
+  }
+  canvas.onmouseup=() =>{
+    painting = false
+  }
+  function drawLine(startX, startY, endX, endY){
+    ctx.beginPath()
+    ctx.lineWidth= 3
+    ctx.moveTo(startX, startY)
+    ctx.lineTo(endX, endY)
+    ctx.stroke()
+    ctx.closePath()
+  }
+
+  clear.onclick=()=>{
+    ctx.fillStyle="pink"
+    ctx.fillRect(0,0,canvas.width, canvas.height)
+  }
+  save.onclick= () =>{
+    const url = canvas.toDataURL("image/jpg")
+    const a = document.createElement("a")
+    a.href = url
+    a.download = "画板"
+    a.target = "_blank"
+    a.click()
+  }
+</script>
+</html>

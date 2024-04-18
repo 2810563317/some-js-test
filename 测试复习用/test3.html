@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<style>
+	.wrap{
+		height: 2000px;
+		width: 100vw;
+		background-color: cadetblue;
+	}
+	.box1{
+		width: 80vw;
+		height: 100px;
+		background-color: bisque;
+		margin: 0 auto;
+	}
+	.box2{
+		width: 200px;
+		height: 600px;
+		background-color: pink;
+		/* top:0; */
+		margin: 0 auto;
+	}
+	.sticky{
+		position: sticky;
+		top:0;
+	}
+</style>
+<body>
+	<div class="wrap">
+		<div class="box1"></div>
+		<div class="box2 sticky"></div>
+		<div class="box1"></div>
+	</div>
+	
+</body>
+<!-- <script>
+	const wrap = document.createElement("div")
+	let text = ''
+	Array(100).fill("a").forEach(item =>{
+		text = text + '<p class="item">item</p>'
+	})
+	wrap.innerHTML = text
+	const content = document.getElementById("content")
+	content.appendChild(wrap)
+</script> -->
+</html>

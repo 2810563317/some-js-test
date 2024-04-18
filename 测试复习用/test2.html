@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=div, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<style>
+	*{
+		padding:0;
+		margin:0
+	}
+	.wrap{
+		display: flex;
+		width: 100vw;
+	}
+	.slide1,.slide2{
+		flex: 0 0 200px;
+		background-color: antiquewhite;
+	}
+	.slide1{
+		order:-1;
+	}
+	.content{
+		flex:1;
+		background-color:aqua
+	}
+</style>
+<body>
+	<div class="wrap">
+		<div class="content">content</div>
+		<div class="slide1">slide1</div>
+		<div class="slide2">slide2</div>
+	</div>
+	
+	<script>
+		
+	</script>
+</body>
+</html>
