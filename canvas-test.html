@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  #canvas{
+    background-color: pink;
+  }
+</style>
+<body>
+
+  <canvas id="canvas" width="500" height="500"></canvas>
+</body>
+<script>
+  const canvas = document.getElementById("canvas")
+  if(canvas.getContext){
+    const ctx = canvas.getContext("2d")
+    // 左上点为坐标原点
+    // 线
+    // ctx.beginPath() // 开始
+    // ctx.moveTo(100, 100) //起点
+    // ctx.lineTo(200, 200); // 一笔终点
+    // ctx.lineTo(200, 300); // 二笔终点
+    // ctx.lineTo(100, 100); 
+    // ctx.stroke() //描边
+    //ctx.fill() // 填满 
+    //矩形
+    // ctx.rect(0,0,100,200) // 快速创建矩形
+    // ctx.stroke() 
+    // ctx.strokeRect(300, 300, 100, 200) // 快速创建矩形,描边创建一起
+    // ctx.fillRect(100, 100, 50, 50) // 快速创建矩形,填充创建一起
+    // ctx.clearRect(125, 125, 10, 10) // 清除一个矩形
+
+    // 圆形 (弧度制)
+    // ctx.arc(300, 200, 50, 0, Math.PI)
+    // ctx.stroke()
+    // ctx.fill()
+
+    //文字
+    ctx.fillText("zita", 100, 100, 100)
+    ctx.font("20px")
+    
+  }else {
+    console.log("不支持canvas")
+  }
+  
+
+</script>
+</html>
